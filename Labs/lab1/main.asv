@@ -1,0 +1,65 @@
+Nt = 128;
+fs = 1000;
+f0 = (5/128)*fs;
+a = 1;
+phi = 0;
+
+n = 0:Nt-1;
+y = a*cos(2*pi*f0*(n/fs) + phi);
+figure;
+
+subplot(3,2,1);
+plot(n,y);
+
+[f, tfx]=transffourier(y,Nt,fs);
+
+subplot(3,2,3);
+plot(f, abs(tfx), "x", "MarkerSize", 5);
+xlabel("Frequency (Hz)");
+ylabel("Magnitude");
+title("Nt = 128");
+
+
+Nt = 4096;
+fs = 1000;
+f0 = (5/128)*fs;
+a = 1;
+phi = 0;
+
+n = 0:Nt-1;
+
+y = a*cos(2*pi*f0*(n/fs) + phi);
+
+[f, tfx]=transffourier(y,Nt,fs);
+
+
+subplot(3,2,5);
+plot(f, abs(tfx), "x", "MarkerSize", 5);
+xlabel("Frequency (Hz)");
+ylabel("Magnitude");
+title("Nt = 4096");
+
+
+Nt = 4096;
+fs = 1000;
+f0 = (5.7/128)*fs;
+a = 1;
+phi = 0;
+
+n = 0:Nt-1;
+
+y = a*cos(2*pi*f0*(n/fs) + phi);
+
+[f, tfx]=transffourier(y,Nt,fs);
+
+
+subplot(3,2,2);
+plot(n,y);
+title("fà");
+subplot(3,2,6);
+plot(f, abs(tfx), "x", "MarkerSize", 5);
+xlabel("Frequency (Hz)");
+ylabel("Magnitude");
+title("Nt = 4096");
+
+
