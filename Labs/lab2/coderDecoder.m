@@ -41,6 +41,9 @@ title('Compressed Audio Data');
 
 compressionRatio = dir(file_name).bytes / dir(new_file_name).bytes;
 disp("We acchived a compression of " + compressionRatio*100 + "%");
+[peaksnr, snr] = psnr(double(y), double(yc));
+disp("With psnr " + peaksnr);
+
 
 
 % Playing original Sound

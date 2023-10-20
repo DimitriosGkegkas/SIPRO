@@ -18,5 +18,6 @@ ytf = [ytf, fliplr(ytf)];
 
 
 y = real(ifft(ytf, npt));
+y = y(:,1);
 
 y = y/(max(max(abs(y)))*1.01);
